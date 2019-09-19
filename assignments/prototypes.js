@@ -16,14 +16,14 @@
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
 function GameObject(attrs) {
-  this.createdAt = attrs.Date(),
+  this.createdAt = attrs.createdAt
 
   this.name = attrs.name,
-  this.dimensions = (length, width, height) => {
+  this.dimensions = function(length, width, height) {
     return (attrs.length, attrs.width, attrs.height);
   }
 
-  this.destroy = (name) => {
+  this.destroy = function(name) {
     return `${name} was removed from the game.`;
   }
 
@@ -41,8 +41,8 @@ function CharacterStats(object) {
 
   }
 
-  destroy.prototype = (object) => {
-    return `${this.name} was removed from the game.`
+  destroy.prototype = function(object) {
+    return `${this.name} was removed from the game.`;
   }
 
 }
@@ -59,9 +59,11 @@ function CharacterStats(object) {
   this.team = attrs.team,
   this.weapons = attrs.weapons,
   this.language = attrs.language,
-  this.greet = () => {
-    return (`${attrs.name} offers a greeting in ${attrs.language}`)
+
+  this.greet = function() {
+    return (`${attrs.name} offers a greeting in ${attrs.language}`);
   }
+
 
 
  }
